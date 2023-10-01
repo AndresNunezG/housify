@@ -1,0 +1,26 @@
+# Ajustes básicos para todos los archivos
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Ajustes específicos para JavaScript y Vue
+[*.js]
+[*.vue]
+indent_style = space
+indent_size = 2
+
+# Ajustes específicos para HTML
+[*.html]
+indent_style = space
+indent_size = 2
+
+# Ajustes específicos para CSS y SCSS
+[*.css]
+indent_style = space
+indent_size = 2
