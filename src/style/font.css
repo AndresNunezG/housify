@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-VariableFont_slnt,wght.ttf') format('woff2');
+  font-weight: 1 1000;
+}
+
+@font-face {
+  font-family: 'RobotoSlab';
+  src: url('./fonts/RobotoSlab-VariableFont_wght.ttf') format('woff2');
+  font-weight: 1 1000;
+}

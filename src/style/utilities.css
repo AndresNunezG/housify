@@ -1,0 +1,113 @@
+@import './theme.css';
+
+/* DISPLAY */
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column { flex-direction: column; }
+.justify-center { justify-content: center; }
+.justify-around { justify-content: space-around; }
+.justify-between { justify-content: space-between; }
+.align-center { align-items: center; }
+.gap-2 { gap: 0.2rem; }
+.gap-3 { gap: 0.3rem; }
+.gap-4 { gap: 0.4rem; }
+.gap-8 { gap: 0.8rem; }
+.gap-10 { gap: 1rem; }
+
+/* BORDER */
+
+.br-md { border-radius: 8px; }
+.border-primary { border: solid 1px var(--stroke-color); }
+
+/* FONT */
+
+.text-primary { color: var(--headline-color); }
+.text-dark { color: var(--stroke-color); }
+.text-secondary { color: var(--secondary-color); }
+.font-weight-light { font-weight: 300; }
+.font-weight-semibold { font-weight: 500; }
+.font-weight-bold { font-weight: 600; }
+.text-center { text-align: center; }
+.underline {text-decoration: underline; }
+.font-secondary { font-family: 'RobotoSlab'; }
+
+/* BUTTON */
+
+.btn {
+  font-family: inherit;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 200ms;
+  padding: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: solid 1px var(--stroke-color);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--button-text-color);
+  border: solid 1px var(--stroke-color);
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* INPUT */
+
+.input {
+  border-radius: var(--border-radius);
+  border: solid 1px var(--stroke-color);
+  padding: 0.5rem;
+}
+
+/* COLOR */
+
+.bg-white { background: white; }
+
+/* PADDING */
+
+.p-3 { padding: 0.3rem; }
+.p-5 { padding: 0.5rem; }
+.px-10 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.px-3 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* MARGIN */
+
+.m-0 { margin: 0; }
+.m-2 { margin: 0.2rem; }
+.m-3 { margin: 0.3rem; }
+.m-10 { margin: 1rem; }
+.my-5 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.my-8 {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+/* WIDTH */
+
+.w-100 { min-width: 100%; }
+.w-75 { width: 75%; }
+.w-50 { width: 50%; }
+.w-25 { width: 25%; }
+
+/* OPACITY */
+
+.o-50 { opacity: 0.50; }
+.o-75 { opacity: 0.75; }
