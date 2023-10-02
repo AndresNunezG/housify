@@ -4,6 +4,11 @@
     "property": "Property",
     "properties": "Properties"
   },
+  "notFound": {
+    "labelParagraph": "Oops, parece que te has perdido en Housify",
+    "losedParagraph": "Esta página no existe, pero las mejores oportunidades están a un clic de distancia",
+    "losedLink": "¡Descubre nuestras propiedades destacadas!"
+  },
   "home": {
     "title": "Find yourself a perfect Home",
     "subtitle": "We are ready to help you get a house that suits all your lifestyle and needs",
