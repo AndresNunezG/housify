@@ -1,0 +1,53 @@
+{
+  "common": {
+    "appName": "Housify",
+    "property": "Property",
+    "properties": "Properties"
+  },
+  "home": {
+    "title": "Find yourself a perfect Home",
+    "subtitle": "We are ready to help you get a house that suits all your lifestyle and needs",
+    "getStarted": "Get Started"
+  },
+  "header": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "properties": "Properties",
+    "testimonials": "Testimonials"
+  },
+  "searchBanner": {
+    "location": "Location",
+    "propertyType": "Property type",
+    "maxPrice": "Max price",
+    "locations": {
+      "city": "Bogotá",
+      "address": "Diagonal 21 #78",
+      "neighborhood": "Cedritos"
+    },
+    "propertyTypes": {
+      "apartment": "Apartment",
+      "house": "House",
+      "duplex": "Duplex"
+    }
+  },
+  "aboutUs": {
+    "aboutUsLabel": "About Us",
+    "subtitle": "We are providing the Top Real State Property in Latam",
+    "paragraph": "We are proud to offer a wide range of properties to meet a variety of needs and budgets."
+  },
+  "ourServices": {
+    "ourServicesLabel": "Our services",
+    "buy": "Buy a Home",
+    "buyParagraph": "Are you ready to make your homeownership dreams come true? Discover the Perfect Property to Call Your Own",
+    "rent": "Rent a Home",
+    "rentParagraph": "Looking for a place to rent? We've got you covered! Browse our extensive selection of properties",
+    "publish": "Publish",
+    "publishParagraph": "Ready to sell or rent your property in Latin America? Let us help you showcase it to the world!"
+  },
+  "testimonials": {
+    "testimonialsLabel": "What's Our Clients Say"
+  },
+  "properties": {
+    "thatYouWillLove": "that you'll love"
+  }
+}

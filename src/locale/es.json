@@ -1,0 +1,53 @@
+{
+  "common": {
+    "appName": "Housify",
+    "property": "Propiedad",
+    "properties": "Propiedades"
+  },
+  "home": {
+    "title": "Encuentra tu Hogar perfecto",
+    "subtitle": "Explora las mejores propiedades en venta y alquiler",
+    "getStarted": "Empezar!"
+  },
+  "header": {
+    "home": "Inicio",
+    "aboutUs": "Nosotros",
+    "properties": "Propiedades",
+    "testimonials": "Testimonios"
+  },
+  "searchBanner": {
+    "location": "Ubicación",
+    "propertyType": "Tipo de propiedad",
+    "maxPrice": "Precio máximo",
+    "locations": {
+      "city": "Bogotá",
+      "address": "Diagonal 21 #78",
+      "neighborhood": "Cedritos"
+    },
+    "propertyTypes": {
+      "apartment": "Apartamento",
+      "house": "Casa",
+      "duplex": "Duplex"
+    }
+  },
+  "aboutUs": {
+    "aboutUsLabel": "Nosotros",
+    "subtitle": "Ofrecemos las mejores propiedades Inmobiliarias en Latam",
+    "paragraph": "Nos enorgullece ofrecer una amplia gama de propiedades que se adaptan a diversas necesidades y presupuestos."
+  },
+  "ourServices": {
+    "ourServicesLabel": "Nuestros servicios",
+    "buy": "Compra",
+    "buyParagraph": "¿Estás preparado para hacer realidad tu sueño de tener casa propia? Descubre la propiedad perfecta",
+    "rent": "Vende",
+    "rentParagraph": "¿Buscas un lugar para alquilar? Nosotros nos encargamos. Navega por nuestra amplia selección de propiedades",
+    "publish": "Publica",
+    "publishParagraph": "¿Estás listo para vender o alquilar vivienda en Latam? Dejanos ayudarte a mostrarla al mundo."
+  },
+  "testimonials": {
+    "testimonialsLabel": "Historias de usuarios felices"
+  },
+  "properties": {
+    "thatYouWillLove": "que amarás"
+  }
+}
