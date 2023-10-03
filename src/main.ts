@@ -6,7 +6,10 @@ import en from "./locale/en.json"
 import es from "./locale/es.json"
 import './style/index.css'
 
-navigator.serviceWorker.register('/sw.js')
+const MODE = import.meta.env.MODE
+if (MODE !== "development") {
+  navigator.serviceWorker.register('/sw.js')
+}
 
 const i18n = createI18n({
   legacy: false,
