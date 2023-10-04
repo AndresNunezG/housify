@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Housify | Ups!</title>
+    <style>
+      :root {
+        --background-color: #fffffe;
+        --background-secondary-color: #f4f4f4;
+        --headline-color: #094067;
+        --button-color: #3da9fc;
+        --border-radius: 16px;
+      }
+      * {
+        font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: var(--background-secondary-color);
+        min-height: 100dvh;
+        display: grid;
+      }
+      section {
+        place-self: center;
+        max-width: 600px;
+        border-radius: var(--border-radius);
+        background-color: var(--background-color);
+        padding: 1rem 4rem;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+        & h1 {
+          font-size: 3rem;
+          font-weight: 800;
+          color: var(--headline-color);
+        }
+        & h3 {
+          color: var(--button-color);
+        }
+        & p:last-child {
+          font-weight: 600;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>Ups!</h1>
+      <h3>Parece que no estás conectado a internet. Verifica tu conexión o vuelve más tarde</h3>
+      <p>También puedes intentar: </p>
+      <ul>
+        <li>🛩️ Apagar el modo avión (si no estás en uno)</li>
+        <li>📱 Encender tus datos móviles o Wifi</li>
+        <li>📡 Comprobar la señal en tu área</li>
+      </ul>
+      <p>Te esperamos pronto en Housify 🩵</p>
+    </section>
+  </body>
+</html>
