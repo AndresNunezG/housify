@@ -51,7 +51,7 @@ const TESTIMONIALS_PER_SLIDE = 2
 // ------------- PROPERTIES -------------
 
 enum PropertyType {
-  Apartment = "APARTMENTS",
+  Apartment = "APARTMENT",
   House = "HOUSE",
   Office = "OFFICE",
 }
