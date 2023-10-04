@@ -7,7 +7,7 @@
       <h1>{{ $t("notFound.labelParagraph") }}</h1>
       <h3>{{ $t("notFound.losedParagraph") }}</h3>
       <router-link :to="{ name: 'home' }">
-        {{ $t("notFound.losedParagraph") }}
+        {{ $t("notFound.losedLink") }}
       </router-link>
     </div>
   </section>
