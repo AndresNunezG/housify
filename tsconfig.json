@@ -25,6 +25,7 @@
       "@/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
       "@shared/*": ["./src/shared/*"],
+      "@users/*": ["./src/users/*"],
     },
 
     /* types */
