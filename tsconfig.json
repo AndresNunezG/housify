@@ -26,6 +26,7 @@
       "@assets/*": ["./src/assets/*"],
       "@shared/*": ["./src/shared/*"],
       "@users/*": ["./src/users/*"],
+      "@properties/*": ["./src/properties/*"],
     },
 
     /* types */

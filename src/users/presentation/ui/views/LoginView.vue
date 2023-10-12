@@ -2,9 +2,16 @@
 import { IAuthEmailPassword } from '@/users/domain/models';
 import { loginWithEmailAndPasswordUseCase, loginWithProviderUseCase } from '@users/presentation/injections/auth';
 import LoginForm from '@users/presentation/ui/components/LoginForm.vue';
+import { toast } from "vue3-toastify";
 
-const eventLogin = (data: IAuthEmailPassword) => {
-  loginWithEmailAndPasswordUseCase(data)
+const eventLogin = async (data: IAuthEmailPassword) => {
+  try {
+    await loginWithEmailAndPasswordUseCase(data)
+  } catch {
+    toast.error("There was an error, please try later", {
+      autoClose: 3000
+    })
+  }
 }
 
 const eventLoginProvider = () => {
@@ -30,10 +37,9 @@ const eventLoginProvider = () => {
   background-position: center center;
   background-size: cover;
   background-color: (0, 0, 0, 0);
-  width: 100dvw;
-  height: 100dvh;
+  height: 100vh;
   position: relative;
-    z-index: 1;
+  z-index: 1;
   & .login-form {
     place-self: center;
     max-width: 400px;

@@ -10,7 +10,9 @@
 .justify-center { justify-content: center; }
 .justify-around { justify-content: space-around; }
 .justify-between { justify-content: space-between; }
+.justify-end { justify-content: end; }
 .align-center { align-items: center; }
+.align-end { align-items: end; }
 .gap-2 { gap: 0.2rem; }
 .gap-3 { gap: 0.3rem; }
 .gap-4 { gap: 0.4rem; }
@@ -20,7 +22,7 @@
 /* BORDER */
 
 .br-md { border-radius: 8px; }
-.border-primary { border: solid 1px var(--stroke-color); }
+.border-primary { border: solid 1px var(--stroke-color) !important; }
 
 /* FONT */
 
@@ -42,22 +44,26 @@
   cursor: pointer;
   transition: all 200ms;
   padding: 0.5rem;
+  border: solid 1px var(--main-color);
 }
 
 .btn-primary {
   background-color: var(--button-color);
   color: var(--button-text-color);
-  border: solid 1px var(--stroke-color);
 }
 
 .btn-secondary {
   background-color: var(--secondary-color);
   color: var(--button-text-color);
-  border: solid 1px var(--stroke-color);
 }
 
 .btn:hover {
   opacity: 0.8;
+}
+
+button:disabled,
+button[disabled]{
+  opacity: 0.5;
 }
 
 /* INPUT */
@@ -76,6 +82,7 @@
 
 .p-3 { padding: 0.3rem; }
 .p-5 { padding: 0.5rem; }
+.p-20 { padding: 2rem; }
 .px-10 {
   padding-right: 1rem;
   padding-left: 1rem;
@@ -99,6 +106,8 @@
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
+.mt-5 { margin-top: 0.5rem; }
+.mb-10 { margin-bottom: 1rem; }
 
 /* WIDTH */
 
@@ -106,6 +115,9 @@
 .w-75 { width: 75%; }
 .w-50 { width: 50%; }
 .w-25 { width: 25%; }
+
+/* HEIGHT */
+.h-100 { min-height: 100%; }
 
 /* OPACITY */
 

@@ -30,7 +30,12 @@ const onSubmitProvider = () => {
     <form @submit.prevent="onSubmit" class="d-flex flex-column gap-8">
       <input v-model="email" type="text" class="input" placeholder="Correo electrónico">
       <input v-model="password" type="password" class="input" placeholder="Contraseña">
-      <button class="btn btn-primary font-weight-bold" type="submit" role="button">Iniciar sesión</button>
+      <button
+        class="btn btn-primary font-weight-bold"
+        type="submit"
+        role="button"
+        :disabled="!email || !password"
+      >Iniciar sesión</button>
     </form>
     <section-divider />
     <button class="btn bg-white my-8 w-100 border-primary p-5 px-10 d-flex justify-center align-center gap-4" @click="onSubmitProvider">

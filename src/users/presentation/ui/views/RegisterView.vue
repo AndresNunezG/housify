@@ -2,9 +2,16 @@
 import { IAuthEmailPassword } from '@/users/domain/models';
 import { registerWithEmailAndPasswordUseCase, loginWithProviderUseCase } from '@users/presentation/injections/auth';
 import RegisterForm from '@users/presentation/ui/components/RegisterForm.vue';
+import { toast } from "vue3-toastify";
 
-const eventRegister = (data: IAuthEmailPassword) => {
-  registerWithEmailAndPasswordUseCase(data)
+const eventRegister = async (data: IAuthEmailPassword) => {
+  try {
+    await registerWithEmailAndPasswordUseCase(data)
+  } catch {
+    toast.error("There was an error, please try later", {
+      autoClose: 3000
+    })
+  }
 }
 
 const eventRegisterProvider = () => {

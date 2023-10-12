@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { type IAuthEmailPassword } from "@users/domain/models"
 import SectionDivider from '@shared/components/SectionDivider.vue'
+import { toast } from "vue3-toastify";
 
 const emit = defineEmits<{
   (e: 'onSubmitRegister', value: IAuthEmailPassword): void,
@@ -13,7 +14,13 @@ const password = ref("")
 const passwordRepeat = ref("")
 
 const onSubmitRegister = () => {
-  emit('onSubmitRegister', { email: email.value, password: password.value } as IAuthEmailPassword)
+  if (password !== passwordRepeat) {
+    toast.warn("Passwords do not match", {
+      autoClose: 3000
+    })
+  } else {
+    emit('onSubmitRegister', { email: email.value, password: password.value } as IAuthEmailPassword)
+  }
 }
 
 const onSubmitProvider = () => {
@@ -32,7 +39,12 @@ const onSubmitProvider = () => {
       <input v-model="email" type="text" class="input" placeholder="Correo electrónico">
       <input v-model="password" type="password" class="input" placeholder="Contraseña">
       <input v-model="passwordRepeat" type="password" class="input" placeholder="Repetir contraseña">
-      <button class="btn btn-primary font-weight-bold" type="submit" role="button">Regístrate</button>
+      <button
+        class="btn btn-primary font-weight-bold"
+        type="submit"
+        role="button"
+        :disabled="!email || !password || !passwordRepeat"
+      >Regístrate</button>
     </form>
     <section-divider />
     <button class="btn bg-white my-8 w-100 border-primary p-5 px-10 d-flex justify-center align-center gap-4" @click="onSubmitProvider">

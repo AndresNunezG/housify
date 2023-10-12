@@ -5,6 +5,7 @@ import router from './routes';
 import en from "./locale/en.json"
 import es from "./locale/es.json"
 import './style/index.css'
+import 'vue3-toastify/dist/index.css';
 
 const MODE = import.meta.env.MODE
 if (MODE !== "development") {

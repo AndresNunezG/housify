@@ -27,7 +27,10 @@ export function logout() {
   })
 }
 
-export function registerUserWithEmailAndPassword(email: string, password: string) {
+export function registerUserWithEmailAndPassword(
+  email: string,
+  password: string
+) {
   const auth = getAuth();
   return new Promise((resolve, reject) => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -41,7 +44,10 @@ export function registerUserWithEmailAndPassword(email: string, password: string
   })
 }
 
-export function loginWithEmailAndPassword(email: string, password: string) {
+export function loginWithEmailAndPassword(
+  email: string,
+  password: string
+) {
   return new Promise((resolve, reject) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)

@@ -15,6 +15,7 @@ export class FirebaseAuthRepository implements IAuthRepository {
       router.push({ name: "properties" })
     } catch (error) {
       console.error(error);
+      throw error
     }
   }
   async loginWithEmailAndPassword(data: IAuthEmailPassword): Promise<void> {
@@ -23,6 +24,7 @@ export class FirebaseAuthRepository implements IAuthRepository {
       router.push({ name: "properties" })
     } catch (error) {
       console.error(error);
+      throw error
     }
   }
   async loginWithProvider(): Promise<void> {
@@ -31,6 +33,7 @@ export class FirebaseAuthRepository implements IAuthRepository {
       router.push({ name: "properties" })
     } catch (error) {
       console.error(error);
+      throw error
     }
   }
   async logout(): Promise<void> {
@@ -39,6 +42,7 @@ export class FirebaseAuthRepository implements IAuthRepository {
       router.push({ name: "home" })
     } catch (error) {
       console.error(error);
+      throw error
     }
   }
 }

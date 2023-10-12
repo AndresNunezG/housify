@@ -10,6 +10,7 @@ export default defineConfig({
       { find: '@assets', replacement: fileURLToPath(new URL('./src/assets', import.meta.url)) },
       { find: '@shared', replacement: fileURLToPath(new URL('./src/shared', import.meta.url)) },
       { find: '@users', replacement: fileURLToPath(new URL('./src/users', import.meta.url)) },
+      { find: '@properties', replacement: fileURLToPath(new URL('./src/properties', import.meta.url)) },
     ]
   }
 })
