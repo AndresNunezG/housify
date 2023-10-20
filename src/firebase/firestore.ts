@@ -6,6 +6,12 @@ import {
   collection,
   getFirestore,
 } from "firebase/firestore";
+import {
+  ref,
+  getStorage,
+  uploadBytes,
+  getDownloadURL,
+} from "firebase/storage";
 import { doc, getDoc } from "firebase/firestore";
 import firebaseApp from "./app"
 
@@ -24,7 +30,7 @@ export async function getAllCollectionDocuments(
   collectionName: string,
 ) {
   const querySnap = await getDocs(collection(db, collectionName))
-  return querySnap
+  return querySnap.docs.map(snap => snap.data())
 }
 
 export async function createDocument(
@@ -50,4 +56,12 @@ export async function deleteDocument(
 ) {
   const docRef = doc(db, collectionName, docId)
   await deleteDoc(docRef);
+}
+
+export async function uploadImageToStorage(file: File) {
+  const storage = getStorage()
+  const storageRef = ref(storage, `properties/images/${file.name}`)
+  await uploadBytes(storageRef, file)
+  const downloadUrl = getDownloadURL(storageRef)
+  return downloadUrl
 }

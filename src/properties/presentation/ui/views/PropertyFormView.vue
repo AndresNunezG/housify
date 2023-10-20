@@ -6,6 +6,7 @@ import {
   submitPropertyForm,
   property,
   errors,
+  onFileChange,
 } from "@properties/presentation/state/propertyFormController"
 
 </script>
@@ -124,6 +125,16 @@ import {
               <input type="checkbox" id="elevator">
               <label for="elevator" name="elevator">Elevator</label>
             </div>
+          </div>
+          <div class="d-flex flex-column w-100 mb-10">
+            <label for="img">Select Image</label>
+            <input
+              type="file"
+              id="property-images"
+              name="property-images"
+              accept="image/*"
+              @change="onFileChange"
+            >
           </div>
           <div class="d-flex flex-column w-100">
             <label for="">Description</label>

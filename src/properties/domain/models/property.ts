@@ -20,6 +20,7 @@ export class Property {
   elevator: boolean
   type: PropertyType
   location: Location
+  imageUrl?: string
 
   constructor(
     price: number,
@@ -30,6 +31,7 @@ export class Property {
     type: PropertyType,
     location: Location,
     description: string,
+    imageUrl: string,
   ) {
     this.price = price
     this.rooms = rooms
@@ -39,6 +41,7 @@ export class Property {
     this.type = type
     this.location = location
     this.description = description
+    this.imageUrl = imageUrl
     this.validations()
   }
 

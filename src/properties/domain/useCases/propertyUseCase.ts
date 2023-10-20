@@ -8,3 +8,19 @@ export function CreatePropertyUseCase(propertyRepository: IPropertyRepository) {
 
   return { execute }
 }
+
+export function UploadImageUseCase(propertyRepository: IPropertyRepository) {
+  async function execute(file: File) {
+    return await propertyRepository.uploadImage(file)
+  }
+
+  return { execute }
+}
+
+export function GetHomePropertiesUseCase(propertyRepository: IPropertyRepository) {
+  async function execute() {
+    return await propertyRepository.getHomeProperties()
+  }
+
+  return { execute }
+}

@@ -1,6 +1,9 @@
-import { reactive } from "vue";
+import { ref, reactive, Ref } from "vue";
 import { Location, Property, PropertyType } from "@properties/domain/models";
-import { createPropertyUseCase } from '@properties/presentation/injections/properties';
+import {
+  createPropertyUseCase,
+  uploadImage
+} from '@properties/presentation/injections/properties';
 import { toast } from "vue3-toastify";
 import router from "@/routes";
 
@@ -16,6 +19,7 @@ const initalValues = {
   area: null,
   elevator: false,
   description: "",
+  images: [],
 }
 
 const errors = {
@@ -37,7 +41,7 @@ function resetPropertyForm() {
   Object.assign(property, initalValues)
 }
 
-function formToDomain(): Property {
+function formToDomain(downloadUrl: string): Property {
   const location = new Location(
     property.address,
     property.neighborhood,
@@ -52,14 +56,16 @@ function formToDomain(): Property {
     property.elevator,
     property.propertyType as PropertyType,
     location,
-    property.description
+    property.description,
+    downloadUrl,
   )
   return propertyDomain
 }
 
 async function submitPropertyForm() {
   try {
-    const propertyDomain = formToDomain()
+    const downloadUrl = await uploadImage(productImage.value!)
+    const propertyDomain = formToDomain(downloadUrl)
     const propertyDto = JSON.parse(JSON.stringify(propertyDomain))
     await createPropertyUseCase(propertyDto)
     toast.success("Property published successfully", {
@@ -74,8 +80,17 @@ async function submitPropertyForm() {
   }
 }
 
+const productImage: Ref<File | undefined> = ref(undefined)
+function onFileChange(event: Event) {
+  const input = event.target as HTMLInputElement
+  if (input.files && input.files.length > 0) {
+    productImage.value = input.files[0];
+  }
+}
+
 export {
   submitPropertyForm,
   property,
   errors,
+  onFileChange,
 }
