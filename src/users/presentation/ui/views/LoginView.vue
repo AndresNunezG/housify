@@ -7,10 +7,18 @@ import { toast } from "vue3-toastify";
 const eventLogin = async (data: IAuthEmailPassword) => {
   try {
     await loginWithEmailAndPasswordUseCase(data)
-  } catch {
-    toast.error("There was an error, please try later", {
-      autoClose: 3000
-    })
+  } catch (error: any) {
+    console.log(typeof error);
+    console.log(Object.keys(error));
+    console.log(Object.values(error));
+
+    let message = "There was an error, please try later"
+    if (error?.code === "auth/user-not-found" ) {
+      message = "User not found"
+    } else if (error?.code === "auth/wrong-password") {
+      message = "User or password incorrect"
+    }
+    toast.error(message, { autoClose: 3000 })
   }
 }
 

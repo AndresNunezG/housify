@@ -14,7 +14,7 @@ const password = ref("")
 const passwordRepeat = ref("")
 
 const onSubmitRegister = () => {
-  if (password !== passwordRepeat) {
+  if (password.value !== passwordRepeat.value) {
     toast.warn("Passwords do not match", {
       autoClose: 3000
     })

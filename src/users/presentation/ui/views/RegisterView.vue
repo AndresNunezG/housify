@@ -6,11 +6,19 @@ import { toast } from "vue3-toastify";
 
 const eventRegister = async (data: IAuthEmailPassword) => {
   try {
+    console.log("here");
+
     await registerWithEmailAndPasswordUseCase(data)
-  } catch {
-    toast.error("There was an error, please try later", {
-      autoClose: 3000
-    })
+  } catch(error: any) {
+    console.log(typeof error);
+    console.log(Object.keys(error));
+    console.log(Object.values(error));
+
+    let message = "There was an error, please try later"
+    if (error?.code === "auth/email-already-in-use" ) {
+      message = "Email already in use"
+    }
+    toast.error(message, { autoClose: 3000 })
   }
 }
 
