@@ -31,7 +31,7 @@ export class Property {
     type: PropertyType,
     location: Location,
     description: string,
-    imageUrl: string,
+    imageUrl?: string,
   ) {
     this.price = price
     this.rooms = rooms

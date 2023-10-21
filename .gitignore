@@ -630,3 +630,6 @@ FodyWeavers.xsd
 
 # env
 .env
+
+# dit
+dist/
