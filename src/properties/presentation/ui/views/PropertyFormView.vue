@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import CustomInput from '@shared/components/CustomInput.vue';
 import SectionDivider from '@shared/components/SectionDivider.vue';
+import UploadIcon from '@assets/icons/UploadIcon.vue'
 import { countries } from '@shared/data';
 import {
   submitPropertyForm,
   isLoadingPropertyForm,
+  productImage,
   property,
   errors,
   onFileChange,
@@ -18,7 +20,7 @@ import LoaderComponent from '@/shared/components/LoaderComponent.vue';
       <loader-component />
     </div>
     <div class="form-container p-20">
-      <h1>Publish new Property</h1>
+      <h1>Publish new property</h1>
       <section-divider />
       <form @submit.prevent="submitPropertyForm">
         <div>
@@ -130,13 +132,21 @@ import LoaderComponent from '@/shared/components/LoaderComponent.vue';
               <label for="elevator" name="elevator">Elevator</label>
             </div>
           </div>
-          <div class="d-flex flex-column w-100 mb-10">
-            <label for="img">Select Image</label>
+          <div class="d-flex gap-8 align-center w-100 mb-10">
+            <label
+              for="property-images"
+              class="custom-file-input d-flex justify-center align-center gap-8"
+            >
+              <upload-icon fill="#094067" />
+              Select Image
+            </label>
+            <p class="m-0 image-upload-name">{{ productImage?.name }}</p>
             <input
               type="file"
               id="property-images"
               name="property-images"
               accept="image/*"
+              style="display: none"
               @change="onFileChange"
             >
           </div>
@@ -202,5 +212,19 @@ textarea {
   place-self: center;
   overflow-y: scroll;
   margin: 3rem;
+}
+.custom-file-input {
+  cursor: pointer;
+  border: solid 1px var(--stroke-color);
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  max-width: fit-content;
+  transition: opacity 200ms;
+}
+.custom-file-input:hover {
+  opacity: 0.5;
+}
+.image-upload-name {
+  height: fit-content;
 }
 </style>

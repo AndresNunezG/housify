@@ -94,8 +94,9 @@ function onFileChange(event: Event) {
 
 export {
   submitPropertyForm,
+  onFileChange,
   isLoadingPropertyForm,
   property,
   errors,
-  onFileChange,
+  productImage,
 }
