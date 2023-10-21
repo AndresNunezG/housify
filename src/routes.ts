@@ -54,9 +54,6 @@ router.beforeEach(async (to, _, next) => {
 
   const exemptUrls = ['login', 'register']
 
-  console.log("HERRRE", to);
-
-
   if (exemptUrls.includes(to.name as string) && currentUser) {
     next({ name: 'properties' })
   } else if(requiresAuth && !currentUser) {

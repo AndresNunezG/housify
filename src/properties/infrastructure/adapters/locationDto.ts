@@ -7,5 +7,7 @@ export function fromLocationDocToDomain(doc: DocumentData): Location {
     doc.neighborhood,
     doc.city,
     doc.country,
+    doc.latitude,
+    doc.longitude,
   )
 }

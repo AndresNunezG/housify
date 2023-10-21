@@ -37,6 +37,8 @@ const errors = {
 
 const property = reactive({ ...initalValues })
 
+const selectedMarker = ref({})
+
 function resetPropertyForm() {
   Object.assign(property, initalValues)
 }
@@ -47,6 +49,8 @@ function formToDomain(downloadUrl: string): Property {
     property.neighborhood,
     property.city,
     property.country,
+    (selectedMarker.value as { position: { lat: number } }).position.lat,
+    (selectedMarker.value as { position: { lng: number } }).position.lng,
   )
   const propertyDomain = new Property(
     property.price ?? 0,
@@ -99,4 +103,5 @@ export {
   property,
   errors,
   productImage,
+  selectedMarker,
 }

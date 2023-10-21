@@ -12,17 +12,23 @@ export class Location {
   neighborhood: string
   city: string
   country: string
+  latitude: number
+  longitude: number
 
   constructor(
     address: string,
     neighborhood: string,
     city: string,
     country: string,
+    latitude: number,
+    longitude: number,
   ) {
     this.address = address
     this.neighborhood = neighborhood
     this.city = city
     this.country = country
+    this.latitude = latitude
+    this.longitude = longitude
     this.validations()
   }
 

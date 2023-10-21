@@ -12,6 +12,7 @@ import {
   onFileChange,
 } from "@properties/presentation/state/propertyFormController"
 import LoaderComponent from '@/shared/components/LoaderComponent.vue';
+import MapMarker from '../components/MapMarker.vue';
 </script>
 
 <template>
@@ -23,60 +24,14 @@ import LoaderComponent from '@/shared/components/LoaderComponent.vue';
       <h1>Publish new property</h1>
       <section-divider />
       <form @submit.prevent="submitPropertyForm">
-        <div>
-          <h3>Location</h3>
-          <div class="d-flex w-100 gap-8 mb-10">
-            <custom-input
-              v-model="property.address"
-              :error="errors.address"
-              class="w-50"
-              label="Address"
-            />
-            <custom-input
-              v-model="property.neighborhood"
-              :error="errors.neighborhood"
-              class="w-50"
-              label="Neighborhood"
-            />
-          </div>
-          <div class="d-flex w-100 gap-8">
-            <div class="d-flex flex-column w-50">
-              <label for="">Country</label>
-              <select
-                v-model="property.country"
-                name=""
-                id=""
-                class="w-100"
-                required
-              >
-                <option value="" selected>Select your option</option>
-                <option
-                  v-for="country in countries"
-                  :key="country.code"
-                  :value="country.code"
-                >
-                  {{ country.name }}
-                </option>
-              </select>
-              <div v-if="errors.country" class="error-message">{{ errors.country }}</div>
-            </div>
-            <custom-input
-              v-model="property.city"
-              :error="errors.city"
-              class="w-50"
-              label="City"
-            />
-          </div>
-        </div>
-        <section-divider />
         <div class="d-flex gap-8 w-100">
           <div class="d-flex flex-column w-50">
             <h3>Type</h3>
-            <label for="">Property type</label>
+            <label for="property-type">Property type</label>
             <select
               v-model="property.propertyType"
-              name=""
-              id=""
+              name="property-type"
+              id="property-type"
               class="w-100"
               required
             >
@@ -99,6 +54,54 @@ import LoaderComponent from '@/shared/components/LoaderComponent.vue';
               />
             </div>
           </div>
+        </div>
+        <section-divider />
+        <div>
+          <h3>Location</h3>
+          <div class="d-flex w-100 gap-8 mb-10">
+            <custom-input
+              v-model="property.address"
+              :error="errors.address"
+              class="w-50"
+              label="Address"
+            />
+            <custom-input
+              v-model="property.neighborhood"
+              :error="errors.neighborhood"
+              class="w-50"
+              label="Neighborhood"
+            />
+          </div>
+          <div class="d-flex w-100 gap-8">
+            <div class="d-flex flex-column w-50">
+              <label for="country">Country</label>
+              <select
+                v-model="property.country"
+                name="country"
+                id="country"
+                class="w-100"
+                required
+              >
+                <option value="" selected>Select your option</option>
+                <option
+                  v-for="country in countries"
+                  :key="country.code"
+                  :value="country.code"
+                >
+                  {{ country.name }}
+                </option>
+              </select>
+              <div v-if="errors.country" class="error-message">{{ errors.country }}</div>
+            </div>
+            <custom-input
+              v-model="property.city"
+              :error="errors.city"
+              class="w-50"
+              label="City"
+            />
+          </div>
+          <p>Select property location</p>
+          <map-marker />
         </div>
         <section-divider />
         <div>
@@ -151,8 +154,8 @@ import LoaderComponent from '@/shared/components/LoaderComponent.vue';
             >
           </div>
           <div class="d-flex flex-column w-100">
-            <label for="">Description</label>
-            <textarea v-model="property.description" name="" id="" cols="30" rows="10"></textarea>
+            <label for="description">Description</label>
+            <textarea v-model="property.description" name="description" id="description" cols="30" rows="10"></textarea>
             <div v-if="errors.description" class="error-message">{{ errors.description }}</div>
           </div>
         </div>
