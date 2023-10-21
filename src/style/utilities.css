@@ -108,6 +108,8 @@ button[disabled]{
 }
 .mt-5 { margin-top: 0.5rem; }
 .mb-10 { margin-bottom: 1rem; }
+.mt-10 { margin-top: 1rem; }
+.mt-80 { margin-top: 5rem; }
 
 /* WIDTH */
 

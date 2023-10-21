@@ -29,6 +29,6 @@ export function fromPropertyDocListToDomainList(
     doc.elevator,
     fromLocationDocToDomain(doc.location),
     getDocPropertyType(doc.type),
-    undefined
+    doc.imageUrl
   ))
 }

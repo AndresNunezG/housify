@@ -8,10 +8,12 @@ import { IPropertyRepository } from "@properties/domain/useCases";
 import {
   fromPropertyDocListToDomainList
 } from "@properties/infrastructure/adapters/propertyDto"
+import { getCurrentUser } from "@/firebase/auth"
 
 export class FirebasePropertyRepository implements IPropertyRepository {
   async createProperty(data: Property): Promise<void> {
-    await createDocument("properties", data)
+    const user: any = await getCurrentUser()
+    await createDocument("properties", { ...data,  userUid: user.uid})
   }
 
   async uploadImage(file: File): Promise<string> {

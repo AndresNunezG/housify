@@ -62,8 +62,10 @@ function formToDomain(downloadUrl: string): Property {
   return propertyDomain
 }
 
+const isLoadingPropertyForm = ref(false)
 async function submitPropertyForm() {
   try {
+    isLoadingPropertyForm.value = true
     const downloadUrl = await uploadImage(productImage.value!)
     const propertyDomain = formToDomain(downloadUrl)
     const propertyDto = JSON.parse(JSON.stringify(propertyDomain))
@@ -77,6 +79,8 @@ async function submitPropertyForm() {
     toast.warn(`Please check the errors\n${error}`, {
       autoClose: 3000,
     });
+  } finally {
+    isLoadingPropertyForm.value = false
   }
 }
 
@@ -90,6 +94,7 @@ function onFileChange(event: Event) {
 
 export {
   submitPropertyForm,
+  isLoadingPropertyForm,
   property,
   errors,
   onFileChange,

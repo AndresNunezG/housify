@@ -4,15 +4,19 @@ import SectionDivider from '@shared/components/SectionDivider.vue';
 import { countries } from '@shared/data';
 import {
   submitPropertyForm,
+  isLoadingPropertyForm,
   property,
   errors,
   onFileChange,
 } from "@properties/presentation/state/propertyFormController"
-
+import LoaderComponent from '@/shared/components/LoaderComponent.vue';
 </script>
 
 <template>
   <section class="property-form-view">
+    <div v-if="isLoadingPropertyForm" class="loader-container">
+      <loader-component />
+    </div>
     <div class="form-container p-20">
       <h1>Publish new Property</h1>
       <section-divider />
@@ -155,6 +159,17 @@ import {
 </template>
 
 <style scoped lang="css">
+.loader-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 select {
   border-radius: var(--border-radius);
   border: solid 1px var(--stroke-color);
@@ -175,6 +190,7 @@ textarea {
   width: 100dvw;
   height: 100dvh;
   display: grid;
+  position: relative;
 }
 .form-container {
   background-color: var(--main-color);

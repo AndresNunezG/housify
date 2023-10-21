@@ -4,13 +4,13 @@ import LogoutBtn from "@users/presentation/ui/components/LogoutBtn.vue"
 
 <template>
   <header class="w-100">
-    <div class="header-container d-flex justify-between align-center">
+    <div class="header-container d-flex gap-8 justify-between align-center">
       <router-link :to="{ name: 'home' }" class="home-link">
         <h1 class="title font-secondary">{{ $t("common.appName") }}</h1>
       </router-link>
-      <div class="btns-container h-100 d-flex justify-center align-items-center">
+      <div class="btns-container h-100 d-flex gap-8 px-10 justify-center align-items-center">
         <router-link :to="{ name: 'publish-property' }">
-          <button class="btn btn-primary">Publish property</button>
+          <button class="btn w-100 font-weight-bold btn-primary">Publish</button>
         </router-link>
         <logout-btn />
       </div>
@@ -23,7 +23,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 1;
-  background-color: var(--background-color);
+  background-color: var(--background-color) !important;
 }
 .home-link {
   text-decoration: none;
@@ -32,14 +32,6 @@ header {
   color: var(--highlight-color);
   margin: 1rem;
   text-decoration: none;
-}
-.btns-container {
-  margin: auto 1rem;
-  gap: 1rem;
-}
-.btn {
-  font-weight: bold;
-  height: fit-content;
 }
 svg {
   margin: auto 0;

@@ -28,7 +28,6 @@ import PublishHomeIcon from '@assets/icons/PublishHomeIcon.vue'
 </template>
 
 <style scoped lang="css">
-/* TODO: add animations on scroll to this section */
 .our-services {
   padding: 3rem;
 }
