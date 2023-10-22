@@ -9,10 +9,14 @@ import { formatCurrency } from '@shared/utils'
 
 const props = defineProps<{ property: Property }>()
 const { property } = toRefs(props)
+
+const emit = defineEmits<{
+  (e: 'onCardSelected', property: Property): void
+}>()
 </script>
 
 <template>
-  <article class="card">
+  <article class="card" @click="emit('onCardSelected', property)">
     <img
       :src="property.imageUrl"
       alt="property-image"
@@ -56,6 +60,7 @@ const { property } = toRefs(props)
   -webkit-box-shadow: 0px 0px 68px 3px rgba(0,0,0,0.29);
   -moz-box-shadow: 0px 0px 68px 3px rgba(0,0,0,0.29);
   box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.1);
+  cursor: pointer;
 }
 .card-content {
   margin: 1rem 0;

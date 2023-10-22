@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import { reactive, onMounted } from "vue"
+import { reactive, onMounted, ref } from "vue"
 import { toast } from "vue3-toastify";
 import { getHomeProperties } from '@properties/presentation/injections/properties'
 import PropertyCard from "./PropertyCard.vue";
 import LoaderComponent from "@shared/components/LoaderComponent.vue"
+import ModalComponent from "@/shared/components/ModalComponent.vue";
+import PropertyDetail from "./PropertyDetail.vue";
+import { Property } from "@/properties/domain/models";
+
 const properties = reactive([])
+const propertyDetail: Property | {} = reactive({})
+const showDetailModal = ref(false)
 
 onMounted(async () => {
   try {
@@ -24,12 +30,22 @@ onMounted(async () => {
         v-for="property, index in properties"
         :property="property"
         :key="index"
+        @on-card-selected="(value) => {
+          showDetailModal = true;
+          Object.assign(propertyDetail, value);
+        }"
       />
     </section>
     <div v-else class="loader-container w-100">
       <loader-component />
     </div>
   </section>
+  <modal-component
+    :show-modal="showDetailModal"
+    @on-close-modal="showDetailModal = false"
+  >
+    <property-detail :property="(propertyDetail as Property)" />
+  </modal-component>
 </template>
 
 <style scoped lang="css">
@@ -40,7 +56,7 @@ onMounted(async () => {
   row-gap: 3rem;
   column-gap: 2rem;
   padding: 3rem;
-  &  .property-card {
+  & .property-card {
     grid-column: 1fr;
   }
 }

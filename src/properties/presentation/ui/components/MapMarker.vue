@@ -29,7 +29,7 @@ async function initMap() {
       center: position,
       mapId: 'PROPERTY_FORM_MAP_ID',
     }
-  );
+  )
 
   await createAndCleanMarker(
     {

@@ -25,10 +25,10 @@ export function fromPropertyDocListToDomainList(
     doc.rooms,
     doc.baths,
     doc.area,
-    doc.description,
     doc.elevator,
-    fromLocationDocToDomain(doc.location),
     getDocPropertyType(doc.type),
+    fromLocationDocToDomain(doc.location),
+    doc.description,
     doc.imageUrl
   ))
 }

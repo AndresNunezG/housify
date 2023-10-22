@@ -29,6 +29,7 @@
 .text-primary { color: var(--headline-color); }
 .text-dark { color: var(--stroke-color); }
 .text-secondary { color: var(--secondary-color); }
+.text-tertiary { color: var(--button-color) }
 .font-weight-light { font-weight: 300; }
 .font-weight-semibold { font-weight: 500; }
 .font-weight-bold { font-weight: 600; }
